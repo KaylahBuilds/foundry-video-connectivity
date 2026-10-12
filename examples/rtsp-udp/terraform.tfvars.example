@@ -1,0 +1,21 @@
+# Documentation placeholders, NOT working account/network settings.
+# Copy to terraform.tfvars (ignored by Git), then replace before planning.
+aws_region     = "us-east-1"
+aws_account_id = "000000000000" # Intentionally rejected until replaced.
+vpc_id         = "vpc-0123456789abcdef0"
+
+name            = "foundry-rtsp-udp"
+aws_role        = "server" # Or "client" when AWS initiates a pull from a remote server.
+peer_ipv4_cidrs = ["192.0.2.10/32"] # Documentation address; replace with verified peer CIDRs.
+rtsp_port       = 554
+
+# RECEIVER destination ports, not sender source ports.
+# These are illustrative choices, not Palantir or protocol requirements.
+client_rtp_ports  = { from = 5004, to = 5004 }
+client_rtcp_ports = { from = 5005, to = 5005 }
+server_rtcp_ports = { from = 6001, to = 6001 }
+
+tags = {
+  Environment = "lab"
+  Project     = "foundry-video-connectivity"
+}

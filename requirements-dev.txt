@@ -1,0 +1,2 @@
+# The validation scripts use only Python 3.11+ standard-library modules.
+# No pip dependencies are required. Terraform 1.9.8 is installed separately.

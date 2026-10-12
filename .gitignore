@@ -1,0 +1,42 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials
+terraform.rc
+.terraformrc
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# Terraform working data and potentially sensitive plans/state
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.plan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local tools and reports
+.venv/
+**/__pycache__/
+*.pyc
+.tools/
+artifacts/
+*.pcap
+*.pcapng
+*.mp4
+*.ts
+*.mkv
+.DS_Store
+Thumbs.db

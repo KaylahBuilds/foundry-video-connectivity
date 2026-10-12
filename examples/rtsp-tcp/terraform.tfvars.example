@@ -1,0 +1,15 @@
+# Documentation placeholders, NOT working account/network settings.
+# Copy to terraform.tfvars (ignored by Git), then replace before planning.
+aws_region     = "us-east-1"
+aws_account_id = "000000000000" # Intentionally rejected until replaced.
+vpc_id         = "vpc-0123456789abcdef0"
+
+name            = "foundry-rtsp-tcp"
+aws_role        = "server" # Or "client" when AWS initiates a pull from a remote server.
+peer_ipv4_cidrs = ["192.0.2.10/32"] # Documentation address; replace with verified peer CIDRs.
+rtsp_port       = 554
+
+tags = {
+  Environment = "lab"
+  Project     = "foundry-video-connectivity"
+}

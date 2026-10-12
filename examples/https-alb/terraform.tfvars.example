@@ -1,0 +1,25 @@
+# Documentation placeholders only. Copy locally to terraform.tfvars and replace.
+aws_region     = "us-east-1"
+aws_account_id = "123456789012"
+name           = "foundry-video-lab"
+vpc_id         = "vpc-0123456789abcdef0"
+subnet_ids     = ["subnet-0123456789abcdef0", "subnet-0fedcba9876543210"]
+
+# Documentation addresses, NOT Palantir allowlist values.
+foundry_source_cidrs = ["192.0.2.10/32"]
+certificate_arn      = "arn:aws:acm:us-east-1:123456789012:certificate/00000000-0000-0000-0000-000000000000"
+internal             = true
+backend_protocol     = "HTTP"
+backend_port         = 8080
+health_check_path    = "/health"
+
+# Leave empty when ECS/EKS/another stack owns registration.
+# Otherwise register same-VPC private IP targets whose ENIs bear the backend SG.
+target_ips = {}
+
+# For backend encryption set BOTH backend_protocol="HTTPS" and backend_port=8443.
+# ALB does not validate backend certificates. This is not backend mTLS.
+# enable_outbound_client    = true
+# foundry_destination_cidrs = ["198.51.100.20/32"]
+# access_log_bucket         = "replace-with-existing-private-alb-log-bucket"
+deletion_protection = true

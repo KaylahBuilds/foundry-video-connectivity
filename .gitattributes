@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.tf text
+*.tftest.hcl text
+*.md text
+*.yml text
+*.py text
