@@ -85,4 +85,6 @@ Use only your own authorized lab endpoints. Packet captures must be private and 
 
 ## Current verification status
 
-The local rebuild passes all 9 repository checks, recursive Terraform formatting, and relative documentation-link checks. The two native suites contain 50 mocked test cases. They have not run: initialization is blocked because the local environment cannot resolve the Terraform provider registry. Provider-backed validation and native test results therefore remain unverified; the included CI workflow runs them when the project is published. No AWS apply or Foundry integration test has been performed, and no stream has been connected.
+On October 12, 2026, [GitHub Actions validation](https://github.com/KaylahBuilds/foundry-video-connectivity/actions/runs/38303819131) passed all 9 repository checks, recursive Terraform formatting, initialization and provider-backed validation in all five roots, and all 50 native mocked Terraform tests (27 HTTPS and 23 RTSP). Local relative documentation-link checks also passed. Local provider initialization remains blocked by registry DNS access, so the provider-backed results come from GitHub Actions rather than this workstation.
+
+These results verify configuration and mocked behavior, not live connectivity. No AWS apply or Foundry integration test has been performed, and no stream has been connected. Complete the integration and acceptance checklists above before operational use.
